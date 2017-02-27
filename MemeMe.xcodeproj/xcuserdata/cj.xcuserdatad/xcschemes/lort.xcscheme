@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "238900161E192D0F005DE0AE"
-               BuildableName = "lort.app"
-               BlueprintName = "lort"
-               ReferencedContainer = "container:lort.xcodeproj">
+               BuildableName = "MemeMe.app"
+               BlueprintName = "MemeMe"
+               ReferencedContainer = "container:MemeMe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "238900161E192D0F005DE0AE"
-            BuildableName = "lort.app"
-            BlueprintName = "lort"
-            ReferencedContainer = "container:lort.xcodeproj">
+            BuildableName = "MemeMe.app"
+            BlueprintName = "MemeMe"
+            ReferencedContainer = "container:MemeMe.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,11 +56,23 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "238900161E192D0F005DE0AE"
-            BuildableName = "lort.app"
-            BlueprintName = "lort"
-            ReferencedContainer = "container:lort.xcodeproj">
+            BuildableName = "MemeMe.app"
+            BlueprintName = "MemeMe"
+            ReferencedContainer = "container:MemeMe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE = disable"
+            value = ""
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE = disable"
+            value = ""
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -75,9 +87,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "238900161E192D0F005DE0AE"
-            BuildableName = "lort.app"
-            BlueprintName = "lort"
-            ReferencedContainer = "container:lort.xcodeproj">
+            BuildableName = "MemeMe.app"
+            BlueprintName = "MemeMe"
+            ReferencedContainer = "container:MemeMe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
