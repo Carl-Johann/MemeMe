@@ -32,7 +32,6 @@
             <objects>
                 <tabBarController title="Sent Memes Tab Bar Controller" id="vTO-X2-Hem" customClass="TabBarController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Sent Memes" id="epn-LU-88u">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="Lzi-O8-Jgg"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fxh-yp-w0j">
                             <connections>
                                 <action selector="AddMemeBtn:" destination="vTO-X2-Hem" id="JtI-Rx-VJ7"/>
