@@ -19,6 +19,12 @@ class SentMemesTableViewController: UIViewController, UITableViewDelegate, UITab
         self.TableView.reloadData()
     }
     
+    @IBAction func AddMemeButton(_ sender: Any) {
+        let addMemeVC = self.storyboard!.instantiateViewController(withIdentifier: "MakeAMemeViewController") as! MakeAMemeViewController
+            
+        self.present(addMemeVC, animated: true, completion: nil)
+    }
+    
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                 
@@ -46,7 +52,7 @@ class SentMemesTableViewController: UIViewController, UITableViewDelegate, UITab
         
         self.navigationController!.pushViewController(detailViewController, animated: true)
         print("Presented DetailView")
-        self.tabBarController?.tabBar.isHidden = true
+        
     }
     
     

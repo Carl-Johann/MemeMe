@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kBz-dT-SZc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vTO-X2-Hem">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,32 +11,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="aQf-qI-PtB">
-            <objects>
-                <navigationController id="kBz-dT-SZc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vfd-Fr-Myh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="vTO-X2-Hem" kind="relationship" relationship="rootViewController" id="XuG-7F-5R5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sKj-OG-heG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2204" y="-878"/>
-        </scene>
         <!--Sent Memes Tab Bar Controller-->
         <scene sceneID="zYS-4w-1gZ">
             <objects>
-                <tabBarController title="Sent Memes Tab Bar Controller" id="vTO-X2-Hem" customClass="TabBarController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController title="Sent Memes Tab Bar Controller" id="vTO-X2-Hem" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Sent Memes" id="epn-LU-88u">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fxh-yp-w0j">
-                            <connections>
-                                <action selector="AddMemeBtn:" destination="vTO-X2-Hem" id="JtI-Rx-VJ7"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fxh-yp-w0j"/>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="tN1-4F-2S5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -44,14 +24,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <outlet property="SentMemesTabBar" destination="epn-LU-88u" id="nMB-TH-fib"/>
                         <segue destination="ny2-md-Yhr" kind="relationship" relationship="viewControllers" id="cWn-L4-L2v"/>
                         <segue destination="3fy-wV-2Kr" kind="relationship" relationship="viewControllers" id="Wxu-qm-MHc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVe-kM-h0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1391" y="-878"/>
+            <point key="canvasLocation" x="-1386" y="-848"/>
         </scene>
         <!--Sent Memes Table View Controller-->
         <scene sceneID="xjG-ub-Kg0">
@@ -99,14 +78,20 @@
                     <tabBarItem key="tabBarItem" title="Table" id="soX-Pu-0vQ">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="Pp3-rc-IVl"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="Pp3-rc-IVl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="B2w-K1-M7S">
+                            <connections>
+                                <action selector="AddMemeButton:" destination="wDa-Lu-rGh" id="fl8-gA-iXj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="TableView" destination="lKe-Br-8Q9" id="WnX-BX-Gwr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDx-YC-CKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94" y="-510"/>
+            <point key="canvasLocation" x="94" y="-464"/>
         </scene>
         <!--Sent Memes Detail View Controller-->
         <scene sceneID="ABQ-0x-IcY">
@@ -228,9 +213,16 @@
                     <tabBarItem key="tabBarItem" title="Collection" id="zs2-y4-FnO">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="uZt-0U-1Qp"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="uZt-0U-1Qp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4EJ-Wh-Y3W">
+                            <connections>
+                                <action selector="AddMemeButton:" destination="Gtu-r8-ZIG" id="mMc-pU-hAi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="SentMemesCollectionView" destination="3sw-I2-Pof" id="ga2-RI-Rrd"/>
+                        <outlet property="flowLayout" destination="dHp-xf-cdm" id="5rc-O3-viU"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hY2-PN-86P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -341,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="817" y="-510"/>
+            <point key="canvasLocation" x="817" y="-463"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tf7-Is-3Wc">
@@ -360,7 +352,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsH-Ba-1AN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-599" y="-510"/>
+            <point key="canvasLocation" x="-599" y="-464"/>
         </scene>
     </scenes>
 </document>

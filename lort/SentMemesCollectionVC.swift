@@ -10,13 +10,63 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
+    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet var SentMemesCollectionView: UICollectionView!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    
+    
+    override func didRotate(from: UIInterfaceOrientation) {
+        let xAxsis = view.frame.size.width
+        
+        if from.isPortrait {
+            setCellStats(xAxsis, 5.0)
+        } else {
+            setCellStats(xAxsis, 3.0)
+        }
+    }
+    
+    
+    
+    func setCellStats(_ xAxsis: CGFloat, _ numberOfElements: CGFloat) {
+        
+        let space:CGFloat = 3.0
+        let cellSideHeight = (xAxsis - (numberOfElements * space)) / numberOfElements
+
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: cellSideHeight, height: cellSideHeight)
+
+    }
+    
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let xAxsis = view.frame.size.width
+        setCellStats(xAxsis, 3.0)
+    }
+    
+
     override func viewWillAppear(_ animated: Bool) {
         self.SentMemesCollectionView.reloadData()
     }
+    
+    
  
+    @IBAction func AddMemeButton(_ sender: Any) {
+        let addMemeVC = self.storyboard!.instantiateViewController(withIdentifier: "MakeAMemeViewController") as! MakeAMemeViewController
+        
+        self.present(addMemeVC, animated: true, completion: nil)
+
+    }
+    
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return appDelegate.memes.count

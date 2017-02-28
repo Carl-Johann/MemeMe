@@ -16,7 +16,8 @@ class SentMemesDetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        self.tabBarController?.tabBar.isHidden = true
+        
         self.SentMemesDetailViewControllerImage.image = self.meme.memedImage
     }
     
