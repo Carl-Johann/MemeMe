@@ -15,7 +15,6 @@ class SentMemesTableViewController: UIViewController, UITableViewDelegate, UITab
 
     
     override func viewWillAppear(_ animated: Bool) {
-        print("Table View Did Appear")
         self.TableView.reloadData()
     }
     

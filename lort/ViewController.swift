@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MakeAMemeViewController
 //  MemeMe
 //
 //  Created by CarlJohan on 01/01/17.
@@ -28,23 +28,21 @@ class MakeAMemeViewController: UIViewController, UIImagePickerControllerDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         subscribeToKeyboardNotifications()
         subscribeToHideKeyboardNotifications()
+
         
-        topMemeTextField.defaultTextAttributes = memeTextAttributes
-        buttomMemeTextField.defaultTextAttributes = memeTextAttributes
+        setupTextfield(topMemeTextField)
+        setupTextfield(buttomMemeTextField)
         
-        topMemeTextField.text = "TYPE HERE"
-        buttomMemeTextField.text = "TYPE HERE"
-        
-        self.topMemeTextField.delegate = self
-        self.buttomMemeTextField.delegate = self
     }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         CameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
         buttomMemeTextField.alpha = 0
@@ -58,6 +56,14 @@ class MakeAMemeViewController: UIViewController, UIImagePickerControllerDelegate
         unsubscribeFromKeyboardNotifications()
         unsubscribeFromHideKeyboardNotifications()
     }
+    // MARK: - Setup
+    
+    func setupTextfield(_ textfield: UITextField) {
+        textfield.delegate = self
+        textfield.text = "TYPE HERE"
+        textfield.defaultTextAttributes = memeTextAttributes
+    }
+    
     
     
     // MARK: - Keyboard
@@ -109,6 +115,10 @@ class MakeAMemeViewController: UIViewController, UIImagePickerControllerDelegate
         
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
     
     
     
