@@ -33,8 +33,7 @@ class MakeAMemeViewController: UIViewController, UIImagePickerControllerDelegate
         subscribeToHideKeyboardNotifications()
 
         
-        setupTextfield(topMemeTextField)
-        setupTextfield(buttomMemeTextField)
+        
         
     }
     
@@ -55,6 +54,8 @@ class MakeAMemeViewController: UIViewController, UIImagePickerControllerDelegate
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
         unsubscribeFromHideKeyboardNotifications()
+        setupTextfield(topMemeTextField)
+        setupTextfield(buttomMemeTextField)
     }
     // MARK: - Setup
     
@@ -62,6 +63,7 @@ class MakeAMemeViewController: UIViewController, UIImagePickerControllerDelegate
         textfield.delegate = self
         textfield.text = "TYPE HERE"
         textfield.defaultTextAttributes = memeTextAttributes
+        textfield.textAlignment = .center
     }
     
     
@@ -176,12 +178,10 @@ class MakeAMemeViewController: UIViewController, UIImagePickerControllerDelegate
    // MARK: - Meme Text and Font
     
     let memeTextAttributes:[String:Any] = [
-        
-        //NSStrokeColorAttributeName: UIColor.white,
+        NSStrokeColorAttributeName: UIColor.black,
         NSForegroundColorAttributeName: UIColor.white,
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 25)!,
-        NSStrokeWidthAttributeName: 0
-    
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 40)!,
+        NSStrokeWidthAttributeName: -3.0
     ]
     
     // MARK: - Making the meme
